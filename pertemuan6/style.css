@@ -1,0 +1,173 @@
+
+/* PENGATURAN DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f1f5f9;
+    padding: 20px;
+
+    /* CSS GRID UNTUK LAYOUT UTAMA */
+    display: grid;
+
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "sidebar content"
+        "footer footer";
+
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+/* HEADER */
+header {
+    grid-area: header;
+    background-color: #1d4ed8;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+/* NAVIGASI */
+nav {
+    grid-area: nav;
+    background-color: #1e293b;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #93c5fd;
+}
+
+/* SIDEBAR */
+aside {
+    grid-area: sidebar;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000015;
+}
+
+aside h2 {
+    color: #1d4ed8;
+    margin-bottom: 15px;
+}
+
+aside p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* CONTENT */
+main {
+    grid-area: content;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000015;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #1d4ed8;
+    margin-bottom: 15px;
+}
+
+main p {
+    text-align: justify;
+    text-indent: 30px;
+    margin-bottom: 15px;
+}
+
+/* FOTO PROFIL */
+main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 15px auto;
+}
+
+/* FLEXBOX UNTUK KARTU KEAHLIAN */
+.kartu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.kartu {
+    flex: 1 1 150px;
+    background-color: #dbeafe;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #1d4ed8;
+}
+
+.kartu h3 {
+    color: #1d4ed8;
+    margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer {
+    grid-area: footer;
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+footer a {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+/* RESPONSIVE UNTUK HP */
+@media (max-width: 600px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "sidebar"
+            "content"
+            "footer";
+
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 5px 8px;
+    }
+
+    main {
+        padding: 18px;
+    }
+}
